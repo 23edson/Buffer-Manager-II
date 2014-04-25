@@ -1,3 +1,8 @@
+Universidade Federal da Fronteira Sul
+Ciência da Computação - Banco de Dados II
+Implementação de Buffer
+Por Gabrielle Souza e Lais Borin
+
 LEIA-ME
 
 Para utilizar a implementação, inclua a biblioteca de nome "func.h" sendo que suas funções são implementadas em "func.c"
@@ -41,7 +46,3 @@ $ gcc *.c -o prog -Wall
 $ ./prog
 
 
-Universidade Federal da Fronteira Sul
-Ciência da Computação - Banco de Dados II
-Implementação de Buffer
-Por Gabrielle Souza e Lais Borin
