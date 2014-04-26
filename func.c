@@ -1,16 +1,18 @@
+/*
+Executado no Ubuntu 12.04
+Compilado com gcc version 4.6.3
+
+*/
 #include "func.h"
-
-
 
 struct CAMPOS *leMetadados(char *meta){ // Retorna os metadados em uma estrutura.
 	FILE *metadados;
 	metadados = fopen(meta, "r"); // Abre os metadados armazenados em meta
 	int qtdCampos, i, j = 0, tam;
 	char c;
+
 	if (metadados == NULL) {
-       printf ("Houve um erro ao abrir o arquivo '%s'.\n", meta);
        exit(0);
-    }
     if(fread(&qtdCampos, sizeof(int), 1, metadados)) // Lê o primeiro inteiro que representa a quantidade de campos da tabela.
     {
 	   struct CAMPOS *campos=(struct CAMPOS *)malloc(sizeof(struct CAMPOS)*qtdCampos); // Cria uma estrutura para armazenar os dados dos campos.
@@ -33,8 +35,6 @@ struct CAMPOS *leMetadados(char *meta){ // Retorna os metadados em uma estrutura
 	   fclose(metadados);// Fecha o arquivo meta
 	   return campos;
     }
-    else
-		printf("Erro ao ler arquivo metadados.\n");
 
 	return NULL;
 }
@@ -55,10 +55,8 @@ int qtCampos(char *meta){ // Retorna a quantidade de campos do esquema
 
     metadados = fopen(meta, "r");
 
-    if (metadados == NULL) {
-        printf ("Houve um erro ao abrir o arquivo '%s'.\n",meta);
+    if (metadados == NULL)
         exit(0);
-    }
     fread(&qtdCampos, sizeof(int), 1, metadados); //Lê o primeiro inteiro que representa a quantidade de campos da tabela.
     fclose(metadados);
 
@@ -101,10 +99,8 @@ char *getTupla(struct CAMPOS *campos, char *meta, char *dado, int from){ //Pega 
     FILE *dados;
 
     dados = fopen(dado, "r");
-	if (dados == NULL) {
-       printf ("Houve um erro ao abrir o arquivo '%s'\n", dado);
+	if (dados == NULL)
        exit(0);
-    }
     fseek(dados, from, 1);
     if(fgetc (dados) != EOF){
         fseek(dados, -1, 1);
@@ -157,11 +153,13 @@ void colocaTuplaBuffer(struct page *buffer, char *tupla, struct CAMPOS *campos, 
     	}
     	i++;// Se não, passa pra proxima página do buffer.
     }
+    /*
     if (!found)
     {
         printf("Buffer Cheio! Implementar a política de troca.\n");
 		return;
     }
+    */
 }
 void showTupleBuffer(struct page *buffer, struct CAMPOS *campos, char *meta, int pg, int rg){
 //mostra o registro de número "rg" da página "pg" do bufffer

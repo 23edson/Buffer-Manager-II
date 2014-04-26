@@ -1,3 +1,9 @@
+/*
+Executado no Ubuntu 12.04
+Compilado com gcc version 4.6.3
+
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

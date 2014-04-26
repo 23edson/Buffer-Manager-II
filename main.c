@@ -2,7 +2,7 @@
 
 int main(){
 
-    //main demonstrativa, para mais detalhes, consulte arquivo LEIAME.txt e func.c
+    //main demonstrativa, para mais detalhes consulte arquivo LEIAME.txt e func.c
     struct page *buffer = inicializaBuffer();
 
 	struct CAMPOS *campos = leMetadados("meta.dat"); // Traz pra memória o esquema dos dados
