@@ -11,7 +11,7 @@ struct CAMPOS *leMetadados(char *meta){ // Retorna os metadados em uma estrutura
 	int qtdCampos, i, j = 0, tam;
 	char c;
 
-	if (metadados == NULL) {
+	if (metadados == NULL)
        exit(0);
     if(fread(&qtdCampos, sizeof(int), 1, metadados)) // Lê o primeiro inteiro que representa a quantidade de campos da tabela.
     {
