@@ -15,6 +15,5 @@ int main(int rg, char *arq[]){
 
     showTupleBuffer(buffer, campos, meta, 0, 1);
 
-
     return 0;
 }
