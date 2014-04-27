@@ -11,7 +11,7 @@ int main(int rg, char *arq[]){
 
     carregaDados(buffer, data, meta, campos);
 
-    //showBuffer(buffer, campos, "meta.dat");
+    //showBuffer(buffer, campos, meta.dat);
 
     showTupleBuffer(buffer, campos, meta, 0, 1);
 
