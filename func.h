@@ -25,7 +25,6 @@ struct page {
    unsigned int position;        // posição livre da página
 };
 
-void testaArquivos(char *arq[]);
 struct CAMPOS *leMetadados(char *meta);
 int tamTupla(struct CAMPOS *campos, char *meta);
 void leTupla(struct CAMPOS *campos, char *meta, char *linha);
